@@ -27,14 +27,15 @@ for c in bag:
     # 가능한 보석들
     while bosuks:
 
-        # top 확인
+        # 보석보다 가방이 작을 때
         if bosuks[0][0] > c:
             break
-
+        
         m,v =  heapq.heappop(bosuks)
+        # 현재 가방 크기에서 넣을 수 있는 모든 보석이 들어감
         heapq.heappush(pq,-v)
     
-
+    # 넣을 수 있는 보석중에 가장 가치가 높은거 선택
     if pq:
         v =  - heapq.heappop(pq)
         ans = ans + v

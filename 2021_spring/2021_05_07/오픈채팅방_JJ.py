@@ -3,11 +3,13 @@ def solution(record):
     answer = []
     for each in record:
         data = each.split()
+        # 최신 이름 저장
         if data[0] == 'Enter' or data[0] == 'Change':
             nameTable[data[1]] = data[2]
         
     for each in record:
         data = each.split()
+        # 최신 이름 변경하여 출력
         if data[0] == 'Enter':
             answer.append(nameTable[data[1]]+'님이 들어왔습니다.')
         elif data[0] == 'Leave':

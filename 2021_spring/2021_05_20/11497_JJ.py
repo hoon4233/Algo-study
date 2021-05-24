@@ -18,8 +18,6 @@ for _ in range(T):
         else :
             dq.appendleft(l[i])
         flag = not flag
-    
-
 
     ans = 0
     for i in range(n-1):

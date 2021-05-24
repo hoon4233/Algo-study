@@ -1,14 +1,10 @@
 def solution(p):
-    return recur(p)
-
-
-def recur(p):
     if p == '':
         return ''
     u,v = sliceToUV(p)
     
     if validation(u):
-        return u + recur(v)
+        return u + solution(v)
     
     u = u[1:-1]
     newu = ''
@@ -19,7 +15,7 @@ def recur(p):
         else :
             newu = newu + '('
             
-    return '('+recur(v)+')' + newu
+    return '('+solution(v)+')' + newu
 
 def sliceToUV(p):
     s = 0
